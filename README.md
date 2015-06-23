@@ -1,3 +1,7 @@
+
+![MIT License][license-image]
+[![Build Status][travis-image]][travis-url]
+
 # Advanced, database agnostic ODM
 
 Sometimes your application is not a simple to-do list and you need to write complex business logic.
@@ -82,3 +86,9 @@ Employee.collection().find({ name:'Chuck', surname:'Norris' }).one(function(err,
 // It will inherit all methods including registered events like "beforeJobChange".
 var SuperEmployee = Model.define('SuperEmployee', ['Employee']);
 ```
+
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: license.txt
+
+[travis-url]: https://travis-ci.org/totaljs-enterprise/model
+[travis-image]: https://travis-ci.org/totaljs-enterprise/model.svg?branch=master
