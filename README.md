@@ -87,7 +87,6 @@ Employee.collection().find({ name:'Chuck', surname:'Norris' }).one(function(err,
 var SuperEmployee = Model.define('SuperEmployee', ['Employee']);
 ```
 
-
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license-url]: license.txt
 
