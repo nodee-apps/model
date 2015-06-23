@@ -1,0 +1,32 @@
+{
+  "name": "enterprise-model",
+  "preferGlobal": false,
+  "version": "0.8.0",
+  "author": "TOTAL.JS ENTERPRISE - Matus Szabo <matthew@totaljs.com>",
+  "description": "Advanced, database agnostic ODM",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/totaljs-enterprise/model"
+  },
+  "keywords": [
+    "mvc",
+    "model",
+    "orm",
+    "odm",
+    "database",
+    "datasource",
+    "mongodb"
+  ],
+  "dependencies" : {
+    "enterprise-utils"       :  "*",
+    "mongodb"         :  "^2.0.0"
+  },
+  "analyze": false,
+  "devDependencies":{ },
+  "bundledDependencies": [],  
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.12"
+  }
+}
