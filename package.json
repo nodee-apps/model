@@ -2,12 +2,12 @@
   "name": "enterprise-model",
   "preferGlobal": false,
   "version": "0.8.2",
-  "author": "TOTAL.JS ENTERPRISE - Matus Szabo <matthew@totaljs.com>",
+  "author": "NODEJS ENTERPRISE - Matus Szabo <matthew@nodejsenterprise.com>",
   "description": "Advanced, database agnostic ODM",
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/totaljs-enterprise/model"
+    "url": "https://github.com/nodejs-enterprise/model"
   },
   "keywords": [
     "mvc",
