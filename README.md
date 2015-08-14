@@ -90,5 +90,5 @@ var SuperEmployee = Model.define('SuperEmployee', ['Employee']);
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license-url]: license.txt
 
-[travis-url]: https://travis-ci.org/totaljs-enterprise/model
-[travis-image]: https://travis-ci.org/totaljs-enterprise/model.svg?branch=master
+[travis-url]: https://travis-ci.org/nodejs-enterprise/model
+[travis-image]: https://travis-ci.org/nodejs-enterprise/model.svg?branch=master
