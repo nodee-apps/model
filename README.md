@@ -5,7 +5,7 @@
 # Advanced, database agnostic ODM
 
 Sometimes your application is not a simple to-do list and you need to write complex business logic.
-Rather than strictly predefined CRUD methods and hooks, nis-model is a set of tools which you can use to write your own logic, data sources and reusable behaviours.
+Rather than strictly predefined CRUD methods and hooks, enterprise-model is a set of tools which you can use to write your own logic, data sources and reusable behaviours.
 * Scheme (inheritable, with nested models)
 * Validations (extendable validations and sanitizers)
 * Defaults (inheritable default settings)
@@ -19,13 +19,13 @@ Rather than strictly predefined CRUD methods and hooks, nis-model is a set of to
 
 ## Installation
 ```
-npm install nis-model
+npm install enterprise-model
 ```
 
 ## Usage
 
 ```javascript
-var Model = require('nis-model');
+var Model = require('enterprise-model');
 
 /*
  * create employee model, which:
