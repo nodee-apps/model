@@ -175,7 +175,7 @@ function testQueryMethods(cb){
     
     s.execute(function(err){
         assert.ok(!err);
-        console.log('FileSystemDataSource query methods - OK');
+        console.log('FileSystemDataSource: query methods - OK');
         cb();
     });
 }
@@ -348,7 +348,6 @@ function testInstanceMethods(cb){
     
     s.execute(function(err){
         assert.ok(!err);
-        console.log('FileSystemDataSource instance methods - OK');
-        console.log('FileSystemDataSource - OK');
+        console.log('FileSystemDataSource: instance methods - OK');
     });
 }
