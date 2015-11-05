@@ -16,10 +16,10 @@ require('./behaviours/orderable.js');
 require('./behaviours/tree.js');
 
 // tests require filesystem
-// require('./datasources/fileSystemDS.js');
+require('./datasources/fileSystemDS.js');
 
 // test require connection to mongodb
 // require('./datasources/mongoDS.js');
 
 // test require connection to elasticSearch
-// require('./datasources/elasticSearchDS.js');
+require('./datasources/elasticSearchDS.js');
