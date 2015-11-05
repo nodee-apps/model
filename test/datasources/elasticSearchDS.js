@@ -29,7 +29,7 @@ var Person = model.define('PersonES', ['ElasticSearchDataSource'], {
 
 Person.extendDefaults({
     connection:{
-        endpointUrl:'http://localhost:9200',
+        baseUrl:'https://Jcpb5gOFUeXRGxIOhsJgAJ5IV5cxkKJX:@nodejsenterprise.east-us.azr.facetflow.io',
         index: 'test_index', // elasticsearch index
         type: 'test_type', // elasticsearch type
         
@@ -265,7 +265,7 @@ function testCollectionMethods(cb){
     
     s.execute(function(err){
         assert.ok(!err);
-        console.log('ElasticSearchDataSource query methods - OK');
+        console.log('ElasticSearchDataSource: query methods - OK');
         cb();
     });
 }
@@ -346,5 +346,6 @@ function testInstanceMethods(){
     s.execute(function(err){
         if(err) throw err;
         console.log('ElasticSearchDataSource instance methods - OK');
+        console.log('ElasticSearchDataSource - OK');
     });
 }

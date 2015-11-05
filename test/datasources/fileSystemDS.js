@@ -91,7 +91,7 @@ function testQueryMethods(cb){
                 { id: 'css/img', name: 'img', ancestors: [ 'css' ], isDir: true, isFile: false, ext: null }
             ]));
             
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -101,7 +101,7 @@ function testQueryMethods(cb){
             assert.ok(!err);
             assert.ok(equalData(['modifiedDT', 'createdDT', 'fullPath', 'size'], file,
                 { id: 'css', name: 'css', ancestors: [], isDir: true, isFile: false, ext: null }));
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -120,7 +120,7 @@ function testQueryMethods(cb){
                 throw err;
             }
             
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -130,7 +130,7 @@ function testQueryMethods(cb){
             if(err) throw err;
             assert.ok(count === 4);
             
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -145,7 +145,7 @@ function testQueryMethods(cb){
                 { id: 'css/test.css', name: 'test', ancestors: [ 'css' ], isDir: false, isFile: true, ext: 'css' }
             ]));
             
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -155,7 +155,7 @@ function testQueryMethods(cb){
             if(err) throw err;
             assert.ok(count===0);
             
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -168,7 +168,7 @@ function testQueryMethods(cb){
             File.collection().all(function(err, files){
                 if(err) throw err;
                 assert.ok(files.length===0);
-                next(); 
+                setTimeout(next, 500); 
             });
         });
     });
@@ -198,7 +198,7 @@ function testInstanceMethods(cb){
                 { id: 'willberenamed.txt', name: 'willberenamed', ancestors: [], isDir: false, isFile: true, ext: 'txt' }));
             
             f = file;
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -210,7 +210,7 @@ function testInstanceMethods(cb){
                 { id: 'subfolder', name: 'subfolder', ancestors: [], isDir: true, isFile: false, ext: null }));
             
             dir = file;
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -219,7 +219,7 @@ function testInstanceMethods(cb){
         f.read(function(err, buffer){
             if(err) throw err;
             assert.ok(buffer.toString() === 'test content');
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -228,23 +228,18 @@ function testInstanceMethods(cb){
         f.write('updated content', function(err, file){
             if(err) throw err;
             
-            // fs.stat has weird behaviour on windows, need to test on linux
-            //setTimeout(function(){
-            //    
-            //    // try update not last version
-            //    f.write('updated content fail', function(err){
-            //        assert.ok(err.message === 'FileSystem prototype write: version NOTFOUND');
-            //        
-                    f.read(function(err, buffer){
-                        if(err) throw err;
-                        assert.ok(buffer.toString() === 'updated content');
-                        
-                        f = file;
-                        next();
-                    });
-                
-            //    });
-            //}, 1000);
+            // try update not last version
+            f.write('updated content fail', function(err){
+                assert.ok(err.message === 'FileSystem prototype write: version NOTFOUND');
+
+                f.read(function(err, buffer){
+                    if(err) throw err;
+                    assert.ok(buffer.toString() === 'updated content');
+
+                    f = file;
+                    setTimeout(next, 500);
+                });
+            });
         });
     });
     
@@ -255,7 +250,7 @@ function testInstanceMethods(cb){
             assert.ok(renamedFile.id === 'renamed.txt');
             
             f = renamedFile;
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -266,7 +261,7 @@ function testInstanceMethods(cb){
             assert.ok(movedFile.id === 'subfolder/renamed.txt');
             
             f = movedFile;
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -283,7 +278,7 @@ function testInstanceMethods(cb){
                     assert.ok(renamedFile.id === 'renamedfolder');
                     
                     dir = renamedFile;
-                    next();
+                    setTimeout(next, 500);
                 });
             });
         });
@@ -296,7 +291,7 @@ function testInstanceMethods(cb){
             assert.ok(newFile.id === 'renamedfolder(1)');
             
             dir = newFile;
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -307,7 +302,7 @@ function testInstanceMethods(cb){
             assert.ok(newFile.id === 'renamedfolder/renamedfolder(1)');
             
             //dir = newFile;
-            next();
+            setTimeout(next, 500);
         });
     });
     
@@ -326,7 +321,7 @@ function testInstanceMethods(cb){
                     File.collection().findId('renamedfolder/renamed.txt').all(function(err, files){
                         if(err) throw err;
                         assert.ok(files.length===0);
-                        next();
+                        setTimeout(next, 500);
                     });
                 });
             });
@@ -345,7 +340,7 @@ function testInstanceMethods(cb){
                 File.collection().all(function(err, persons){
                     if(err) throw err;
                     assert.ok(persons.length===0);
-                    next();
+                    setTimeout(next, 500);
                 });
             });
         });
@@ -354,5 +349,6 @@ function testInstanceMethods(cb){
     s.execute(function(err){
         assert.ok(!err);
         console.log('FileSystemDataSource instance methods - OK');
+        console.log('FileSystemDataSource - OK');
     });
 }
