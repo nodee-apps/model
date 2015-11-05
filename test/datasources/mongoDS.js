@@ -94,7 +94,7 @@ function testQueryBuilders(){
             port: 27017,
             poolSize: 5,
             native_parser: true,
-            mongoUrl: 'mongodb://localhost:27017/enterprise_model_test?auto_reconnect=true&poolSize=5&native_parser=true&'
+            mongoUrl: 'mongodb://localhost:27017/enterprise_model_test?auto_reconnect=true&poolSize=5&native_parser=true'
         },
         query: {
             test: 'test',
@@ -339,5 +339,6 @@ function testInstanceMethods(cb){
     s.execute(function(err){
         assert.ok(!err);
         console.log('MongoDataSource instance methods - OK');
+        console.log('MongoDataSource - OK');
     });
 }
