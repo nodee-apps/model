@@ -1,7 +1,7 @@
 {
   "name": "enterprise-model",
   "preferGlobal": false,
-  "version": "0.8.9",
+  "version": "0.8.10",
   "author": "NODEJS ENTERPRISE - Matus Szabo <matthew@nodejsenterprise.com>",
   "description": "Advanced, database agnostic ODM",
   "main": "./index.js",
