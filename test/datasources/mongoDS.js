@@ -1,7 +1,7 @@
 'use strict';
 
 var assert = require('assert'),
-    async = require('enterprise-utils').async,
+    async = require('nodee-utils').async,
     model = require('../../lib/model.js');
     
 // load model extensions

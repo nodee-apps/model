@@ -5,7 +5,7 @@
 # Advanced, database agnostic ODM
 
 Sometimes your application is not a simple to-do list and you need to write complex business logic.
-Rather than strictly predefined CRUD methods and hooks, enterprise-model is a set of tools which you can use to write your own logic, data sources and reusable behaviours.
+Rather than strictly predefined CRUD methods and hooks, nodee-model is a set of tools which you can use to write your own logic, data sources and reusable behaviours.
 * Scheme (inheritable, with nested models)
 * Validations (extendable validations and sanitizers)
 * Defaults (inheritable default settings)
@@ -19,13 +19,13 @@ Rather than strictly predefined CRUD methods and hooks, enterprise-model is a se
 
 ## Installation
 ```
-npm install enterprise-model
+npm install nodee-model
 ```
 
 ## Usage
 
 ```javascript
-var Model = require('enterprise-model');
+var Model = require('nodee-model');
 
 /*
  * create employee model, which:
@@ -90,5 +90,5 @@ var SuperEmployee = Model.define('SuperEmployee', ['Employee']);
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license-url]: license.txt
 
-[travis-url]: https://travis-ci.org/nodejs-enterprise/model
-[travis-image]: https://travis-ci.org/nodejs-enterprise/model.svg?branch=master
+[travis-url]: https://travis-ci.org/nodee-apps/model
+[travis-image]: https://travis-ci.org/nodee-apps/model.svg?branch=master

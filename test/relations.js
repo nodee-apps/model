@@ -3,7 +3,7 @@
 var assert = require('assert'),
     Model = require('../lib/model.js'),
     relations = require('../lib/relations.js'),
-    Series = require('enterprise-utils').async.Series;
+    Series = require('nodee-utils').async.Series;
     
 // load model extensions
 require('../lib/extensions/defaults.js');
