@@ -89,7 +89,7 @@ function testQueryBuilders(){
             optimisticLock: true },
         cache: {
             createKey: query.getDefaults().cache.createKey,
-            keyPrefix: 'enterprise-model-memory',
+            keyPrefix: 'nodee-model-memory',
             duration: 1000,
             use: true
         }

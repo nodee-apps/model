@@ -36,7 +36,7 @@ module.exports = function(host, port, username, password){
             username: username,
             password: password,
             collection: 'persons',
-            database: 'enterprise_model_test'
+            database: 'nodee_model_test'
         }
     });
 
@@ -96,7 +96,7 @@ module.exports = function(host, port, username, password){
                     createdDT: { 'createdDT':1 }
                 },
                 collection: 'persons',
-                database: 'enterprise_model_test',
+                database: 'nodee_model_test',
                 host: host,
                 username: username,
                 password: password,
@@ -104,7 +104,7 @@ module.exports = function(host, port, username, password){
                 port: port,
                 poolSize: 5,
                 native_parser: true,
-                mongoUrl: 'mongodb://'+( username ? username+':'+password+'@' : '' )+host+':'+port+'/enterprise_model_test?auto_reconnect=true&poolSize=5&native_parser=true'
+                mongoUrl: 'mongodb://'+( username ? username+':'+password+'@' : '' )+host+':'+port+'/nodee_model_test?auto_reconnect=true&poolSize=5&native_parser=true'
             },
             query: {
                 test: 'test',
@@ -121,7 +121,7 @@ module.exports = function(host, port, username, password){
             },
             cache: {
                 createKey: query.getDefaults().cache.createKey,
-                keyPrefix: 'enterprise-model-mongo',
+                keyPrefix: 'nodee-model-mongo',
                 duration: 1000,
                 use: true
             }

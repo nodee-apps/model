@@ -137,7 +137,7 @@ function testQueryBuilders(){
             optimisticLock: true },
         cache: {
             createKey: query.getDefaults().cache.createKey,
-            keyPrefix: 'enterprise-model-jsonfile',
+            keyPrefix: 'nodee-model-jsonfile',
             duration: 1000,
             use: true
         }
