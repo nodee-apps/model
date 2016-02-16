@@ -230,7 +230,7 @@ function testInstanceMethods(cb){
             
             // try update not last version
             f.write('updated content fail', function(err){
-                assert.ok(err.message === 'FileSystem prototype write: version NOTFOUND');
+                assert.ok(err.message === 'PersonFS.prototype.write: version NOTFOUND');
 
                 f.read(function(err, buffer){
                     if(err) throw err;
@@ -268,7 +268,7 @@ function testInstanceMethods(cb){
     // instance rename - folder
     s.add(function(next){
         dir.rename('renamedfolder', function(err, renamedFile){
-            assert.ok(err.message === 'FileSystem prototype write: version NOTFOUND');
+            assert.ok(err.message === 'PersonFS.prototype.rename: version NOTFOUND');
             
             File.collection().findId(dir.id).one(function(err, updatedDir){
                 if(err) throw err;

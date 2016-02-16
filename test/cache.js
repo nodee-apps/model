@@ -91,7 +91,7 @@ function localCache(){
 function sharedCacheGet(){
     setTimeout(function(){
         cache.get('sharedKey', function(err, data){
-            assert.ok(!err);
+            if(err) throw err;
             assert.deepEqual(data, { data:'shared' });
         });
         
@@ -99,7 +99,7 @@ function sharedCacheGet(){
     
     setTimeout(function(){
         cache.get('sharedKey', function(err, data){
-            assert.ok(!err);
+            if(err) throw err;
             assert.ok(!data);
             console.log('cache shared - OK');
         });
@@ -112,7 +112,7 @@ function sharedCachePut(){
         assert.ok(!err);
         
         cache.get('sharedKey', function(err, data){
-            assert.ok(!err);
+            if(err) throw err;
             assert.deepEqual(data, { data:'shared' });
             
             setTimeout(function(){

@@ -170,6 +170,14 @@ function testQueryMethods(cb){
     
     var s = new async.Series();
     
+    // remove all
+    s.add(function(next){
+        Person.collection().remove(function(err){
+            if(err) throw err;
+            next();
+        });
+    });
+    
     // create
     s.add(function(next){
         Person.collection().create(records, function(err, persons){
@@ -355,7 +363,7 @@ function testInstanceMethods(cb){
             
             // try remove not actual version
             fakePerson.remove(function(err){
-                assert.ok(err.message === 'DataSource.prototype.remove: NOTFOUND');
+                assert.ok(err.message === 'PersonJSON.prototype.remove: NOTFOUND');
                 assert.ok(err.code === 'NOTFOUND');
                 
                 p.remove(function(err){
