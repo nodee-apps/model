@@ -108,8 +108,8 @@ function sharedCacheGet(){
 }
 
 function sharedCachePut(){
-    cache.put('sharedKey', { data:'shared' }, 400, function(err){
-        assert.ok(!err);
+    cache.put('sharedKey', { data:'shared' }, 1000, function(err){
+        if(err) throw err;
         
         cache.get('sharedKey', function(err, data){
             if(err) throw err;
@@ -123,7 +123,7 @@ function sharedCachePut(){
                     console.log('cache shared - OK');
                 });
                 
-            }, 800);
+            }, 1500);
         });
     });
 }
