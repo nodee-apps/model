@@ -130,7 +130,7 @@ function testHooks(cb){
                     
                     records[3].ancestors = ['1','2','3']; // test inconsistent ancestors, correctly have to be ['1','3']
                     PersonTree.new( records[3] ).create(function(err, record4){
-                        assert.ok(err.message === 'PersonTree.prototype.validateAncestors: inconsistent path');
+                        assert.ok(err.message === 'PersonTree.prototype.validateAncestors: inconsistent tree path');
                         
                         records[3].ancestors = ['1','3'];
                         PersonTree.new( records[3] ).create(function(err, record4){
