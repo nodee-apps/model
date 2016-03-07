@@ -1,7 +1,7 @@
 {
   "name": "nodee-model",
   "preferGlobal": false,
-  "version": "0.9.3",
+  "version": "0.9.4",
   "author": "NODEE - Matus Szabo <matus@nodee.io>",
   "description": "Advanced, database agnostic ODM",
   "main": "./index.js",
@@ -18,9 +18,9 @@
     "datasource",
     "mongodb"
   ],
-  "dependencies" : {
-    "nodee-utils"       :  "*",
-    "mongodb"         :  "^2.0.0"
+  "dependencies": {
+    "nodee-utils": "*",
+    "mongodb": "^2.0.0"
   },
   "analyze": false,
   "devDependencies":{ },
