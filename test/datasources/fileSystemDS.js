@@ -76,7 +76,7 @@ function testQueryMethods(cb){
     var records = [
         { id: 'css' },
         { id: 'css/test.css', content: 'css file test' },
-        { id: 'css/test.css', content: 'css rename file test' },
+        { id: 'css/test(1).css', content: 'css rename file test' },
         { id: 'css/img' }, // subfolder creation test
     ];
     
