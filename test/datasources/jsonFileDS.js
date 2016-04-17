@@ -363,7 +363,7 @@ function testInstanceMethods(cb){
             
             // try remove not actual version
             fakePerson.remove(function(err){
-                assert.ok(err.message === 'PersonJSON.prototype.remove: NOTFOUND');
+                assert.ok(err.message.match(/PersonJSON.prototype.remove: NOTFOUND.*/));
                 assert.ok(err.code === 'NOTFOUND');
                 
                 p.remove(function(err){

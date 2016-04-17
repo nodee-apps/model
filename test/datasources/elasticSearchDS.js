@@ -326,7 +326,7 @@ module.exports = function(baseUrl){
 
             // try remove not actual version
             fakePerson.remove(function(err){
-                assert.ok(err.message === 'PersonES.prototype.remove: NOTFOUND');
+                assert.ok(err.message.match(/PersonES.prototype.remove: NOTFOUND.*/));
                 assert.ok(err.code === 'NOTFOUND');
 
                 p.remove(function(err){

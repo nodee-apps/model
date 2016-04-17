@@ -339,7 +339,7 @@ module.exports = function(host, port, username, password){
 
                 // try remove not actual version
                 fakePerson.remove(function(err){
-                    assert.ok(err.message === 'PersonMDB.prototype.remove: NOTFOUND');
+                    assert.ok(err.message.match(/PersonMDB.prototype.remove: NOTFOUND.*/));
                     assert.ok(err.code === 'NOTFOUND');
 
                     p.remove(function(err){

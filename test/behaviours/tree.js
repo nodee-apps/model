@@ -91,7 +91,7 @@ function testHooks(cb){
                 
                 records[2].ancestors = ['0','2']; // will return error, because ancestor with id '0' not exists
                 PersonTree.new( records[2] ).create(function(err, record3){
-                    assert.ok( err.message === 'PersonTree.prototype.validateAncestors: cannot find all ancestors' );
+                    assert.ok( err.message === 'PersonTree.prototype.validateAncestors: cannot find all ancestors "["0","2"]", ID "3"' );
                     
                     records[2].ancestors = ['1','2'];
                     PersonTree.new( records[2] ).create(function(err, record3){
@@ -130,7 +130,7 @@ function testHooks(cb){
                     
                     records[3].ancestors = ['1','2','3']; // test inconsistent ancestors, correctly have to be ['1','3']
                     PersonTree.new( records[3] ).create(function(err, record4){
-                        assert.ok(err.message === 'PersonTree.prototype.validateAncestors: inconsistent tree path');
+                        assert.ok(err.message === 'PersonTree.prototype.validateAncestors: inconsistent tree path "["1","2","3"]", ID "4"');
                         
                         records[3].ancestors = ['1','3'];
                         PersonTree.new( records[3] ).create(function(err, record4){
