@@ -428,9 +428,9 @@ function testValidation(){
     assert.deepEqual(m.getData(),{}); // model is empty
     
     m.fill(validValues);
-    assert.ok(m.subModel.__instanceof === 'Model');
-    assert.ok(m.subModel.list[0].__instanceof === 'Model');
-    assert.ok(m.subModel.list[1].__instanceof === 'Model');
+    assert.ok(m.subModel.__instanceof('Model'));
+    assert.ok(m.subModel.list[0].__instanceof('Model'));
+    assert.ok(m.subModel.list[1].__instanceof('Model'));
     
     /*
      * getData
