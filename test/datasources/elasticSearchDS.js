@@ -118,7 +118,7 @@ module.exports = function(baseUrl){
         s.add(function(next){
             Person.collection().create(records, function(err, persons){
                 if(err) throw err;
-
+                
                 assert.ok(equalData(['modifiedDT', 'createdDT'], persons, [
                     { id:'1', name: 'Duri', surname: 'Kainsmetke' },
                     { id:'2', name: 'Jozef', surname: 'Kozmeker' },
@@ -208,7 +208,7 @@ module.exports = function(baseUrl){
                 setTimeout(function(){
                     Person.collection().all(function(err, persons){
                         if(err) throw err;
-
+                        
                         assert.ok(equalData(['modifiedDT', 'createdDT'], persons, [
                             { id: '1', name: 'Duri', surname: 'updated' },
                             { id: '2', name: 'Jozef', surname: 'updated' },
