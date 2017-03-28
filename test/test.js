@@ -22,4 +22,4 @@ require('./datasources/fileSystemDS.js');
 require('./datasources/mongoDS.js')('ds061365.mongolab.com', 61365, 'test', 'pass123');
 
 // test require connection to elasticSearch, please use your own elasticsearch
-require('./datasources/elasticSearchDS.js')('https://gf9b8nkuvr:rjvhm2jhiy@nodee-2480254251.eu-west-1.bonsai.io');
+require('./datasources/elasticSearchDS.js')('https://imw44r1t9j:nuwyisseep@first-cluster-5378061194.us-east-1.bonsaisearch.net');
