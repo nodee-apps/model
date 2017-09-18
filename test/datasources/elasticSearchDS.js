@@ -32,6 +32,8 @@ module.exports = function(baseUrl){
 
     Person.extendDefaults({
         connection:{
+            //debugRequest: true, // debug requests, only for dev
+            //debugResponse: true, // debug response, only for dev
             baseUrl: baseUrl,
             index: 'test_index', // elasticsearch index
             type: 'test_type', // elasticsearch type
@@ -97,7 +99,7 @@ module.exports = function(baseUrl){
         var records = [
             { id: '1', name:'Duri', surname:'Kainsmetke' },
             { id: '2', name:'Jozef', surname:'Kozmeker' },
-            { id: '3', name: 'Pista', surname: 'Horvat' }
+            { id: '3', name:'Pista', surname:'Horvat' }
         ];
 
         var s = new async.Series();
@@ -108,11 +110,21 @@ module.exports = function(baseUrl){
             Person.collection().remove(function(err, count){
                 if(err) throw err;
 
-                console.log('ElasticSearchDataSource: collection.remove all - OK');
                 setTimeout(next, timeout);
             });
         });
 
+        // get all to ensure index is empty
+        s.add(function(next){
+            Person.collection().all(function(err, persons){
+                if(err) throw err;
+
+                assert.ok(persons.length === 0);
+
+                console.log('ElasticSearchDataSource: collection.remove all - OK');
+                setTimeout(next, timeout);
+            });
+        });
 
         // create
         s.add(function(next){
@@ -126,7 +138,7 @@ module.exports = function(baseUrl){
                 ]));
 
                 console.log('ElasticSearchDataSource: collection.create - OK');
-                next();
+                setTimeout(next, timeout);
             });
         });
 
@@ -170,6 +182,18 @@ module.exports = function(baseUrl){
                 next();
             });
         });
+
+        // TODO: test filtered count
+        // filtered count
+        // s.add(function(next){
+        //     Person.collection().find({ name:'Jozef' }).count(function(err, count){
+        //         if(err) throw err;
+        //         assert.ok(count === 1);
+
+        //         console.log('ElasticSearchDataSource: collection.count filtered - OK');
+        //         next();
+        //     });
+        // });
 
         // TODO: test exec method
         // exec
