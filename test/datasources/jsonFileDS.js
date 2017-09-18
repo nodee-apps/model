@@ -140,7 +140,8 @@ function testQueryBuilders(){
             keyPrefix: 'nodee-model-jsonfile',
             duration: 1000,
             use: true
-        }
+        },
+        singleInstanceOp: undefined
     });
     
     console.log('JsonFileDataSource query builders - OK');

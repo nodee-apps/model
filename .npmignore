@@ -1,1 +1,4 @@
 test/
+
+# IDE configs
+.vscode

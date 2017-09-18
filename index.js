@@ -35,5 +35,6 @@ require('./lib/datasources/Memory.js');
 require('./lib/datasources/JsonFile.js');
 require('./lib/datasources/Mongo.js');
 require('./lib/datasources/Rest.js');
+require('./lib/datasources/RestOAuth2.js');
 require('./lib/datasources/ElasticSearch.js');
 require('./lib/datasources/FileSystem.js');

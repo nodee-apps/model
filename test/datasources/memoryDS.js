@@ -92,7 +92,8 @@ function testQueryBuilders(){
             keyPrefix: 'nodee-model-memory',
             duration: 1000,
             use: true
-        }
+        },
+        singleInstanceOp: undefined
     });
     
     console.log('MemoryDataSource query builders - OK');

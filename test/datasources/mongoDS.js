@@ -124,7 +124,8 @@ module.exports = function(host, port, username, password){
                 keyPrefix: 'nodee-model-mongo',
                 duration: 1000,
                 use: true
-            }
+            },
+            singleInstanceOp: undefined
         });
 
         console.log('MongoDataSource: query builders - OK');
