@@ -17,7 +17,7 @@ require('../../lib/datasources/DataSource.js');
 // load Mongo model
 var Mongo = require('../../lib/datasources/Mongo.js');
 
-module.exports = function(host, port, username, password){
+module.exports = function(connString, host, port, username, password){
     host = host || 'localhost';
     port = port || 27017;
 
@@ -31,6 +31,7 @@ module.exports = function(host, port, username, password){
 
     Person.extendDefaults({
         connection:{
+            connString: connString,
             host: host,
             port: port,
             username: username,
@@ -100,11 +101,9 @@ module.exports = function(host, port, username, password){
                 host: host,
                 username: username,
                 password: password,
-                auto_reconnect: true,
                 port: port,
-                poolSize: 5,
-                native_parser: true,
-                mongoUrl: 'mongodb://'+( username ? username+':'+password+'@' : '' )+host+':'+port+'/nodee_model_test?auto_reconnect=true&poolSize=5&native_parser=true'
+                mongoUrl: 'mongodb://'+( username ? username+':'+password+'@' : '' )+host+':'+port+'/nodee_model_test',
+                connString: connString
             },
             query: {
                 test: 'test',
@@ -362,9 +361,9 @@ module.exports = function(host, port, username, password){
             console.log('MongoDataSource: instance methods - OK');
             
             // close connection
-            Mongo.connector.getDb(Person.getDefaults().connection.mongoUrl, function(err, db){
+            Mongo.connector.getClient(Person.getDefaults().connection.mongoUrl, function(err, client){
                 if(err) throw err;
-                db.close();
+                client.close();
                 console.log('MongoDataSource: connection closed - OK');
             });
         });

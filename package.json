@@ -19,14 +19,14 @@
     "mongodb"
   ],
   "dependencies": {
-    "nodee-utils": "latest",
-    "mongodb": "^2.0.0"
+    "mongodb": "^3.2.3",
+    "nodee-utils": "latest"
   },
   "analyze": false,
-  "devDependencies":{ },
-  "bundledDependencies": [],  
+  "devDependencies": {},
+  "bundledDependencies": [],
   "license": "MIT",
   "engines": {
-    "node": ">=0.11"
+    "node": ">=4.0.0"
   }
 }
