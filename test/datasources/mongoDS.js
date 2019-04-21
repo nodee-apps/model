@@ -17,7 +17,7 @@ require('../../lib/datasources/DataSource.js');
 // load Mongo model
 var Mongo = require('../../lib/datasources/Mongo.js');
 
-module.exports = function(connString, host, port, username, password){
+module.exports = function(connstring, host, port, username, password){
     host = host || 'localhost';
     port = port || 27017;
 
@@ -103,7 +103,7 @@ module.exports = function(connString, host, port, username, password){
                 password: password,
                 port: port,
                 mongoUrl: 'mongodb://'+( username ? username+':'+password+'@' : '' )+host+':'+port+'/nodee_model_test',
-                connString: connString
+                connstring: connstring
             },
             query: {
                 test: 'test',
