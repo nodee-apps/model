@@ -31,7 +31,7 @@ module.exports = function(connstring, host, port, username, password){
 
     Person.extendDefaults({
         connection:{
-            connString: connString,
+            connstring: connstring,
             host: host,
             port: port,
             username: username,
