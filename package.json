@@ -1,7 +1,7 @@
 {
   "name": "nodee-model",
   "preferGlobal": false,
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": "NODEE - Matus Szabo <matus@nodee.io>",
   "description": "Advanced, database agnostic ODM",
   "main": "./index.js",
@@ -27,6 +27,6 @@
   "bundledDependencies": [],
   "license": "MIT",
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=8.0.0"
   }
 }

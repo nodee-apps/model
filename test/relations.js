@@ -125,7 +125,7 @@ function testRelationHlpMethods(cb){
             require: true,
             bulkRemove: false
         });
-    }, 'Same relation already exists: "CH1.parentId-->P1"');
+    }, new Error('Same relation already exists: "CH1.parentId [parent] --> P1 [children]"'));
     
     // relation cannot use properties not defined in Model.propSchema
     assert.throws(function(){
@@ -134,7 +134,7 @@ function testRelationHlpMethods(cb){
             require: true,
             bulkRemove: false
         });
-    }, 'Cannot create relation, model "CH1" has not property "fakeProp" defined in property schema');
+    }, new Error('Cannot create relation, model "CH1" has not property "fakeProp" defined in property schema'));
     
     // relation cannot use already defined properties
     assert.throws(function(){
@@ -143,7 +143,7 @@ function testRelationHlpMethods(cb){
             require: true,
             bulkRemove: false
         });
-    }, 'Cannot create relation, model property name conflict: "P1.children"');
+    }, new Error('Cannot create relation, model property name conflict: "P1.children"'));
     
     
     var parent = Parent.new().fill({

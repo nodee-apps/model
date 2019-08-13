@@ -178,7 +178,7 @@ function testQueryMethods(cb){
             next();
         });
     });
-    
+
     // create
     s.add(function(next){
         Person.collection().create(records, function(err, persons){
@@ -197,8 +197,7 @@ function testQueryMethods(cb){
     s.add(function(next){
         Person.collection().one(function(err, person){
             assert.ok(!err);
-            assert.ok(equalData(['modifiedDT', 'createdDT'], person,
-                                       { id: '1', name: 'Duri', surname: 'Kainsmetke', isFetched: true }));
+            assert.ok(equalData(['modifiedDT', 'createdDT'], person, { id: '1', name: 'Duri', surname: 'Kainsmetke', isFetched: true }));
             next();
         });
     });
