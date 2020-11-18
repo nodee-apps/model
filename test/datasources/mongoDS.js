@@ -37,7 +37,8 @@ module.exports = function(connstring, host, port, username, password){
             username: username,
             password: password,
             collection: 'persons',
-            database: 'nodee_model_test'
+            database: 'nodee_model_test',
+            retryWrites: false
         }
     });
 
@@ -102,8 +103,9 @@ module.exports = function(connstring, host, port, username, password){
                 username: username,
                 password: password,
                 port: port,
-                mongoUrl: 'mongodb://'+( username ? username+':'+password+'@' : '' )+host+':'+port+'/nodee_model_test',
-                connstring: connstring
+                mongoUrl: 'mongodb://'+( username ? username+':'+password+'@' : '' )+host+':'+port+'/nodee_model_test' + '?retryWrites=false',
+                connstring: connstring,
+                retryWrites: false
             },
             query: {
                 test: 'test',

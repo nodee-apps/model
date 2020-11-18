@@ -1,12 +1,12 @@
 {
   "name": "nodee-model",
   "preferGlobal": false,
-  "version": "1.2.4",
+  "version": "1.2.5",
   "author": "NODEE - Matus Szabo <matus@nodee.io>",
   "description": "Advanced, database agnostic ODM",
   "main": "./index.js",
-  "scripts":{
-    "test":"cd test && node test.js"
+  "scripts": {
+    "test": "cd test && node test.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,8 @@
     "mongodb"
   ],
   "dependencies": {
-    "mongodb": "^3.2.3",
-    "nodee-utils": "latest"
+    "mongodb": "3.6.3",
+    "nodee-utils": "^1.2.3"
   },
   "analyze": false,
   "devDependencies": {},
