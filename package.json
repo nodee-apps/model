@@ -1,7 +1,7 @@
 {
   "name": "nodee-model",
   "preferGlobal": false,
-  "version": "1.2.6",
+  "version": "1.2.7",
   "author": "NODEE - Matus Szabo <matus@nodee.io>",
   "description": "Advanced, database agnostic ODM",
   "main": "./index.js",
