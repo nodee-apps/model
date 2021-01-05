@@ -19,8 +19,9 @@ require('./behaviours/tree.js');
 require('./datasources/fileSystemDS.js');
 
 // test require connection to mongodb, please use your own databse
-require('./datasources/mongoDS.js')(null, 'ds061365.mongolab.com', 61365, 'test', 'pass123');
+require('./datasources/mongoDS.js')('mongodb+srv://model_test_user:please_dont_use_this_db_only_for_testing_purpose@dev-cluster.xatfm.mongodb.net/nodee_model_test?retryWrites=true&w=majority');
 
-// TODO: update elastic search new version compatibility
+
+// TODO: update elastic search driver to support new elastic server version
 // test require connection to elasticSearch, please use your own elasticsearch
 // require('./datasources/elasticSearchDS.js')('https://oi6juoqj4w:bhzfvm8a08@nodee-test-9340157225.us-east-1.bonsaisearch.net:443');

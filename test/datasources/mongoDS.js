@@ -17,10 +17,7 @@ require('../../lib/datasources/DataSource.js');
 // load Mongo model
 var Mongo = require('../../lib/datasources/Mongo.js');
 
-module.exports = function(connstring, host, port, username, password){
-    host = host || 'localhost';
-    port = port || 27017;
-
+module.exports = function(connstring){
     /*
      * init test Model
      */
@@ -32,13 +29,7 @@ module.exports = function(connstring, host, port, username, password){
     Person.extendDefaults({
         connection:{
             connstring: connstring,
-            host: host,
-            port: port,
-            username: username,
-            password: password,
-            collection: 'persons',
-            database: 'nodee_model_test',
-            retryWrites: false
+            collection: 'persons'
         }
     });
 
@@ -97,15 +88,11 @@ module.exports = function(connstring, host, port, username, password){
                     id: { 'id':1 },
                     createdDT: { 'createdDT':1 }
                 },
-                collection: 'persons',
-                database: 'nodee_model_test',
-                host: host,
-                username: username,
-                password: password,
-                port: port,
-                mongoUrl: 'mongodb://'+( username ? username+':'+password+'@' : '' )+host+':'+port+'/nodee_model_test' + '?retryWrites=false',
+                mongoUrl: connstring,
                 connstring: connstring,
-                retryWrites: false
+                collection: 'persons',
+                host: 'localhost',
+                port: 27017,
             },
             query: {
                 test: 'test',

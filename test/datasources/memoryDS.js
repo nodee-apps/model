@@ -114,6 +114,18 @@ function testQueryMethods(cb){
         data.isFetched = true;
         return data;
     });
+
+    Person.onFill(function(data, fromDataSource){
+        if(fromDataSource) return;
+        // filling data
+        
+        data.isFilled = true;
+        return data;
+    });
+
+    // test fill hook
+    var filledPerson = new Person({ name:'Peter' });
+    assert.ok(equalData(['modifiedDT', 'createdDT'], filledPerson, { name: 'Peter', isFilled: true }));
     
     var records = [
         { id:'1', name:'Duri', surname:'Kainsmetke' },
