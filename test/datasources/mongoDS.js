@@ -236,6 +236,17 @@ module.exports = function(connstring){
             });
         });
 
+        // aggregate
+        s.add(function(next){
+            Person.collection().aggregate([{ $match:{ id:'1' } }], function(err, result){
+                if(err) throw err;
+                assert.ok(equalData(['modifiedDT', 'createdDT'], result, [
+                    { _id:'1', id: '1', name: 'Duri', surname: 'updated' }
+                ]));
+                next();
+            });
+        });
+
         // remove
         s.add(function(next){
             Person.collection().remove(function(err, count){
