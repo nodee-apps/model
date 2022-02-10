@@ -1,7 +1,7 @@
 {
   "name": "nodee-model",
   "preferGlobal": false,
-  "version": "1.2.9",
+  "version": "1.3.0",
   "author": "NODEE - Matus Szabo <matus@nodee.io>",
   "description": "Advanced, database agnostic ODM",
   "main": "./index.js",
@@ -22,11 +22,10 @@
     "mongodb"
   ],
   "dependencies": {
-    "mongodb": "3.6.3",
+    "mongodb": "4.3.1",
     "nodee-utils": "^1.2.3"
   },
   "analyze": false,
-  "devDependencies": {},
   "bundledDependencies": [],
   "license": "MIT",
   "engines": {
